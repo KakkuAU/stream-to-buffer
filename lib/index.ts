@@ -1,5 +1,4 @@
 "use strict";
-import { ReadStream } from "fs";
 import * as MemoryStream from "memorystream";
 import { Readable } from "stream";
 
@@ -9,7 +8,7 @@ import { Readable } from "stream";
 * @Return {Promise<Buffer>}
 */
 
-export function streamToBuffer(readStream: ReadStream): Promise<Buffer> {
+export function streamToBuffer(readStream: Readable): Promise<Buffer> {
 
     if (!readStream || readStream instanceof Readable === false) {
         throw new Error("ReadStream must be a valid instace");
